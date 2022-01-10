@@ -7,12 +7,14 @@ import (
 	"regexp"
 
 	pb "github.com/hi20160616/hfcms-articles/api/articles/v1"
+	"github.com/hi20160616/hfcms/configs"
 	"github.com/hi20160616/hfcms/internal/server/render"
 	"github.com/hi20160616/hfcms/internal/service"
 	tmpl "github.com/hi20160616/hfcms/templates"
 )
 
 var validPath = regexp.MustCompile("^/(list|article|search)/(.*?)$")
+var cfg = configs.NewConfig("hfcms")
 
 // makeHandler invoke fn after path valided, and arrange args from url to object: `&render.Page{}`
 func makeHandler(fn func(http.ResponseWriter, *http.Request, *render.Page)) http.HandlerFunc {
@@ -21,7 +23,7 @@ func makeHandler(fn func(http.ResponseWriter, *http.Request, *render.Page)) http
 		if m == nil {
 			http.NotFound(w, r)
 		}
-		fn(w, r, &render.Page{})
+		fn(w, r, &render.Page{Cfg: cfg})
 	}
 }
 
@@ -55,7 +57,7 @@ func listArticlesHandler(w http.ResponseWriter, r *http.Request, p *render.Page)
 		log.Println(err)
 	}
 	p.Title = msTitle
-	p.Data = ds.Articles
+	p.Data = ds.GetArticles()
 	render.Derive(w, "list", p)
 }
 

@@ -12,7 +12,7 @@ import (
 func ListArticles(ctx context.Context, in *pb.ListArticlesRequest, cfg *configs.Config) (*pb.ListArticlesResponse, error) {
 	defer func() {
 		if err := recover(); err != nil {
-			glog.Errorf("Recoved from ListArticles: \n%v\n", err)
+			glog.Errorf("Recoved from ListArticles: \n%#v\n", err)
 		}
 	}()
 	conn, err := grpc.Dial(cfg.API.GRPC.Addr, grpc.WithInsecure(), grpc.WithBlock())
@@ -21,12 +21,5 @@ func ListArticles(ctx context.Context, in *pb.ListArticlesRequest, cfg *configs.
 	}
 	defer conn.Close()
 	c := pb.NewArticlesAPIClient(conn)
-	as, err := c.ListArticles(ctx, &pb.ListArticlesRequest{Parent: ""})
-	if err != nil {
-		return nil, err
-	}
-	for _, a := range as.Articles {
-		glog.Info("%-30s %-30s %-30s \n", a.ArticleId, a.Title, a.Content)
-	}
-	return as, nil
+	return c.ListArticles(ctx, in)
 }

@@ -9,18 +9,22 @@
 	<thead>
 	    <tr>
 		<th scope="col">#</th>
-		<th scope="col">UpdateTime</th>
 		<th scope="col">Title</th>
-		<th scope="col">Website</th>
+		<th scope="col">Content</th>
+		<th scope="col">UserId</th>
+		<th scope="col">CategoryId</th>
+		<th scope="col">UpdateTime</th>
 	    </tr>
 	</thead>
 	<tbody>
 	    {{range $i, $data := .Data}}
 	    <tr>
 		    	    <th scope="row">{{plusOne $i}}</th>
-		    <td><span class="badge bg-dark">{{smartDate $data.UpdateTime $data.WebsiteTitle}}</span><span class="badge bg-light text-dark">{{smartTime $data.UpdateTime $data.WebsiteTitle}}</span></td>
-		<td><a href="/article/?id={{$data.Id}}&website={{$data.WebsiteTitle}}" class="text-decoration-none" >{{$data.Title}}</a></td>
-		<td>@{{$data.WebsiteTitle}}</td>
+		<td><a href="/article/?id={{$data.ArticleId}}&website={{$data.Title}}" class="text-decoration-none" >{{$data.Title}}</a></td>
+		<td>{{$data.Content}}</td>
+		<td>@{{$data.UserId}}</td>
+		<td>{{$data.CategoryId}}</td>
+		    <td><span class="badge bg-dark">{{smartDate $data.UpdateTime $data.Title}}</span><span class="badge bg-light text-dark">{{smartTime $data.UpdateTime $data.Title}}</span></td>
 	    </tr>
 	    {{end}}
 	</tbody>
