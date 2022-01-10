@@ -27,7 +27,7 @@ func main() {
 
 	// Http server
 	g.Go(func() error {
-		return server.Run(ctx, cfg.Web.Addr)
+		return server.Run(ctx, cfg)
 	})
 
 	// Graceful stop

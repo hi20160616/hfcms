@@ -6,16 +6,17 @@
 		<th scope="col">#</th>
 		<th scope="col">UpdateTime</th>
 		<th scope="col">Title</th>
-		<th scope="col">Website</th>
+		<th scope="col">UserId</th>
 	    </tr>
 	</thead>
 	<tbody>
 	    {{range $i, $data := .Data.Articles}}
 	    <tr>
 		    	    <th scope="row">{{plusOne $i}}</th>
-		    <td><span class="badge bg-dark">{{smartDate $data.UpdateTime $data.WebsiteTitle}}</span><span class="badge bg-light text-dark">{{smartTime $data.UpdateTime $data.WebsiteTitle}}</span></td>
-		<td><a href="/article/?id={{$data.Id}}&website={{$data.WebsiteTitle}}" class="text-decoration-none" >{{$data.Title}}</a></td>
-		<td>@{{$data.WebsiteTitle}}</td>
+		    <td><span class="badge bg-dark">{{smartDate $data.UpdateTime $data.Title}}</span><span class="badge bg-light text-dark">{{smartTime $data.UpdateTime $data.Title}}</span></td>
+		<td><a href="/articles/v?id={{$data.ArticleId}}" class="text-decoration-none" >{{$data.Title}}</a></td>
+		<td>@{{$data.UserId}}</td>
+		<td>{{$data.CategoryId}}</td>
 	    </tr>
 	    {{end}}
 	</tbody>

@@ -6,8 +6,11 @@ import (
 	"net/http/httptest"
 	"testing"
 
+	"github.com/hi20160616/hfcms/configs"
 	"github.com/hi20160616/hfcms/internal/server/render"
 )
+
+var cfg = configs.NewConfig("hfcms")
 
 func TestListArticlesHandler(t *testing.T) {
 	req := httptest.NewRequest("GET", "http://localhost/list", nil)

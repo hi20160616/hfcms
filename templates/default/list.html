@@ -20,7 +20,7 @@
 	    {{range $i, $data := .Data}}
 	    <tr>
 		    	    <th scope="row">{{plusOne $i}}</th>
-		<td><a href="/article/?id={{$data.ArticleId}}&website={{$data.Title}}" class="text-decoration-none" >{{$data.Title}}</a></td>
+		<td><a href="/articles/v?id={{$data.ArticleId}}" class="text-decoration-none" >{{$data.Title}}</a></td>
 		<td>{{$data.Content}}</td>
 		<td>@{{$data.UserId}}</td>
 		<td>{{$data.CategoryId}}</td>
