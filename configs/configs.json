@@ -1,0 +1,20 @@
+{
+  "Debug": true,
+  "Verbose": false,
+  "LogName":"log.txt",
+  "api": {
+    "grpc": {
+      "Network": "tcp",
+      "Addr": "0.0.0.0:8000",
+      "Timeout": "1s"
+    },
+    "http": {
+      "Addr": "0.0.0.0:9000",
+      "Timeout": "1s"
+    }
+  },
+  "web":{
+    "Addr": ":80",
+    "Tmpl": "templates"
+  }
+}

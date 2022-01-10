@@ -1,0 +1,29 @@
+{{template "header" .}}
+<div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center" style="user-select: auto;">
+    <h1 class="display-4" style="user-select: auto;">{{.Title}}</h1>
+    <!-- <p class="lead" style="user-select: auto;">Quickly build an effective pricing table for your potential customers with this Bootstrap example. It’s built with default Bootstrap components and utilities with little customization.</p> -->
+</div>
+
+<div class="container">
+    <table class="table">
+	<thead>
+	    <tr>
+		<th scope="col">#</th>
+		<th scope="col">UpdateTime</th>
+		<th scope="col">Title</th>
+		<th scope="col">Website</th>
+	    </tr>
+	</thead>
+	<tbody>
+	    {{range $i, $data := .Data}}
+	    <tr>
+		    	    <th scope="row">{{plusOne $i}}</th>
+		    <td><span class="badge bg-dark">{{smartDate $data.UpdateTime $data.WebsiteTitle}}</span><span class="badge bg-light text-dark">{{smartTime $data.UpdateTime $data.WebsiteTitle}}</span></td>
+		<td><a href="/article/?id={{$data.Id}}&website={{$data.WebsiteTitle}}" class="text-decoration-none" >{{$data.Title}}</a></td>
+		<td>@{{$data.WebsiteTitle}}</td>
+	    </tr>
+	    {{end}}
+	</tbody>
+    </table>
+</div>
+{{template "footer" .}}
