@@ -11,9 +11,10 @@ require (
 
 require (
 	github.com/golang/glog v1.0.0
-	github.com/hi20160616/hfcms-articles v0.0.0-20220107102850-036dcc104114
+	github.com/hi20160616/hfcms-articles v0.0.0-20220111052224-d359475920eb
 	github.com/yuin/goldmark v1.4.4
 	golang.org/x/sync v0.0.0-20200625203802-6e8e738ad208
+	google.golang.org/grpc v1.42.0
 )
 
 require (
@@ -23,7 +24,6 @@ require (
 	golang.org/x/sys v0.0.0-20210510120138-977fb7262007 // indirect
 	golang.org/x/text v0.3.5 // indirect
 	google.golang.org/genproto v0.0.0-20211129164237-f09f9a12af12 // indirect
-	google.golang.org/grpc v1.42.0 // indirect
 	gopkg.in/yaml.v2 v2.4.0 // indirect
 	sigs.k8s.io/yaml v1.3.0 // indirect
 )

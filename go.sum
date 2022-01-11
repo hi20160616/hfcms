@@ -125,8 +125,8 @@ github.com/grpc-ecosystem/grpc-gateway/v2 v2.7.1 h1:p5m7GOEGXyoq6QWl4/RRMsQ6tWbT
 github.com/grpc-ecosystem/grpc-gateway/v2 v2.7.1/go.mod h1:8ZeZajTed/blCOHBbj8Fss8bPHiFKcmJJzuIbUtFCAo=
 github.com/hashicorp/golang-lru v0.5.0/go.mod h1:/m3WP610KZHVQ1SGc6re/UDhFvYD7pJ4Ao+sR/qLZy8=
 github.com/hashicorp/golang-lru v0.5.1/go.mod h1:/m3WP610KZHVQ1SGc6re/UDhFvYD7pJ4Ao+sR/qLZy8=
-github.com/hi20160616/hfcms-articles v0.0.0-20220107102850-036dcc104114 h1:+twaleMNvOAGi9Ta/OPYwCd8WAlr69Dc5x1TUPJ8Jxk=
-github.com/hi20160616/hfcms-articles v0.0.0-20220107102850-036dcc104114/go.mod h1:BKMlS7BhaCor/HSBIsyyMLV1ynZ6pwqHL3YUmoJxJyE=
+github.com/hi20160616/hfcms-articles v0.0.0-20220111052224-d359475920eb h1:5IMl6aC7aDe0IQ4adawjWeP8cin1s2ME4PCE9Ch6LQU=
+github.com/hi20160616/hfcms-articles v0.0.0-20220111052224-d359475920eb/go.mod h1:BKMlS7BhaCor/HSBIsyyMLV1ynZ6pwqHL3YUmoJxJyE=
 github.com/ianlancetaylor/demangle v0.0.0-20181102032728-5e5cf60278f6/go.mod h1:aSSvb/t6k1mPoxDqO4vJh6VOCGPwU4O0C2/Eqndh1Sc=
 github.com/jstemmer/go-junit-report v0.0.0-20190106144839-af01ea7f8024/go.mod h1:6v2b51hI/fHJwM22ozAgKL4VKDeJcHhJFhtBdhmNjmU=
 github.com/jstemmer/go-junit-report v0.9.1/go.mod h1:Brl9GWCQeLvo8nXZwPNNblvFj/XSXhF0NWZEnDohbsk=

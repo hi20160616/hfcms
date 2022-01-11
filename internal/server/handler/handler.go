@@ -55,9 +55,9 @@ func listArticlesHandler(w http.ResponseWriter, r *http.Request, p *render.Page)
 	if err != nil {
 		log.Println(err)
 	}
-	p.Data = ds.GetArticles()
+	p.Data = ds.Articles
 	p.Title = "Articles"
-	render.Derive(w, "list", p)
+	render.Derive(w, "articles", p)
 }
 
 func getArticleHandler(w http.ResponseWriter, r *http.Request, p *render.Page) {

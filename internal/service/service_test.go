@@ -18,4 +18,19 @@ func TestListArticles(t *testing.T) {
 		t.Error(err)
 	}
 	fmt.Println(as.Articles)
+	for i, a := range as.Articles {
+		fmt.Println(i, a.Category)
+		fmt.Println(i, a.Tags)
+		fmt.Println(i, a.Attributes)
+	}
+}
+
+func TestGetArticle(t *testing.T) {
+	id := "211229113754.21503400003"
+	in := &pb.GetArticleRequest{Name: "articles/" + id}
+	a, err := GetArticle(context.Background(), in, cfg)
+	if err != nil {
+		t.Fatal(err)
+	}
+	fmt.Println(a)
 }

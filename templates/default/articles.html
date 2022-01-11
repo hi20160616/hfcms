@@ -8,12 +8,11 @@
     <table class="table">
 	<thead>
 	    <tr>
-		<th scope="col">#</th>
-		<th scope="col">Title</th>
-		<th scope="col">Content</th>
-		<th scope="col">UserId</th>
-		<th scope="col">CategoryId</th>
-		<th scope="col">UpdateTime</th>
+		<th scope="col">#️⃣ </th>
+		<th scope="col">📜 Title</th>
+		<th scope="col">📂 CategoryName</th>
+		<th scope="col">👤 UserId</th>
+		<th scope="col">🕙 UpdateTime</th>
 	    </tr>
 	</thead>
 	<tbody>
@@ -21,9 +20,8 @@
 	    <tr>
 		    	    <th scope="row">{{plusOne $i}}</th>
 		<td><a href="/articles/v?id={{$data.ArticleId}}" class="text-decoration-none" >{{$data.Title}}</a></td>
-		<td>{{$data.Content}}</td>
+		<td>{{$data.Category.CategoryName}}</td>
 		<td>@{{$data.UserId}}</td>
-		<td>{{$data.CategoryId}}</td>
 		    <td><span class="badge bg-dark">{{smartDate $data.UpdateTime $data.Title}}</span><span class="badge bg-light text-dark">{{smartTime $data.UpdateTime $data.Title}}</span></td>
 	    </tr>
 	    {{end}}
