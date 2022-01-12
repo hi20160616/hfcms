@@ -1,5 +1,6 @@
 {{template "header" .}}
 <div class="container">
-    {{markdown .Data.Content}}
+    <!-- {{unescapeHTML (markdown .Data.Content)}} -->
+    {{markdown .Data.Content | unescapeHTML}}
 </div>
 {{template "footer" .}}

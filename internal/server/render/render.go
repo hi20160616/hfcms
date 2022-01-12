@@ -23,11 +23,12 @@ var templates = template.New("")
 
 func init() {
 	templates.Funcs(template.FuncMap{
-		"summary":   summary,
-		"smartTime": smartTime,
-		"smartDate": smartDate,
-		"markdown":  markdown,
-		"plusOne":   plusOne,
+		"summary":      summary,
+		"smartTime":    smartTime,
+		"smartDate":    smartDate,
+		"markdown":     markdown,
+		"unescapeHTML": unescapeHTML,
+		"plusOne":      plusOne,
 	})
 	templates = template.Must(templates.ParseFS(tmpl.FS, "default/*.html"))
 }
@@ -81,6 +82,10 @@ func markdown(in string) (string, error) {
 		return "", err
 	}
 	return buf.String(), nil
+}
+
+func unescapeHTML(s string) template.HTML {
+	return template.HTML(s)
 }
 
 func plusOne(x int) int {
